@@ -1,0 +1,116 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to my page
+
+  h2 Swarzchild Radius
+
+  p Feel free to watch me join in on this game, lol
+
+  div
+    h3 Planet Resources
+    table.resources
+      tbody
+        tr
+          td
+            <br> Planet
+          td 
+            <br> Population
+          td
+            <br> Food
+          td
+            <br> Metals
+        tr
+          for planet in planets
+            td
+              <br> #{planet.name}
+            td
+              <br> #{planet.pop_civ}
+            td  
+              <br> #{planet.food}
+            td
+              <br> #{planet.metals}
+
+
+  div
+    h3 Planet Infrastructure & Buildings
+    table.infrastructure
+      tbody
+        tr
+          td 
+            <br> Buildings
+          for planet in planets
+            td
+              <br> #{planet.name}
+        tr
+          td
+            <br> Capitals
+          for planet in planets
+            td 
+              <br> #{planet.capital}
+          td
+              form(action="/", method="post")
+                input(type='hidden',name='building',value="capital")
+                input(type='submit',name='method',value='build')
+        tr
+          td
+            <br> HQ
+            for planet in planets
+              td 
+                <br> 0
+          td
+            form(action="/", method="post")
+              input(type='hidden',name='building',value="HQ")
+              input(type='submit',name='method',value='build')
+        tr
+          td
+            <br> Farms
+            for planet in planets
+              td 
+                <br> #{planet.farms}
+          td
+            form(action="/", method="post")
+              input(type='hidden',name='building',value="farms")
+              input(type='submit',name='method',value='build')   
+        tr
+          td
+            <br> Mines
+            for planet in planets
+              td 
+                <br> #{planet.mines}
+          td
+            form(action="/", method="post")
+              input(type='hidden',name='building',value="mines")
+              input(type='submit',name='method',value='build')
+
+          
+        
+  div
+    h3 Queue
+    table
+      tbody
+        tr
+          td 
+            <br> 1
+    
+
+
+
+  h2 Home Control System
+
+  p This is just my control box to turn on lights.
+
+
+
+  //- div
+  //-   table
+  //-     tbody
+  //-       for user in in users
+  //-         tr
+  //-           td
+  //-             <br> #{user.name}
+  //-           td
+  //-             <br> #{user.mac}
+  //-           td
+  //-             <br> #{user.last_online}

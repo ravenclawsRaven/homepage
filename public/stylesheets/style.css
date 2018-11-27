@@ -1,0 +1,26 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color:	#222f5b
+}
+a {
+  color: #00B7FF;
+}
+
+.resources {
+  width: 100%;
+  text-align: center
+}
+
+.infrastructure {
+  width: 20%;
+  text-align: center
+}
+
+
+td.a {
+  border-style:dotted; 
+  border-width:3px; 
+  border-color:#000000; 
+  padding: 10px;
+
